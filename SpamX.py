@@ -1,4 +1,3 @@
-
 # imporitng modules
 import time
 from selenium import webdriver
@@ -6,7 +5,6 @@ from selenium.webdriver.common.keys import Keys
 from webdriver_manager.chrome import ChromeDriverManager
 import pyautogui
 from time import sleep
-import cv2
 
 #showing details about program
 print(" welcome to SpamX")
@@ -67,13 +65,7 @@ for _ in range(count):
     pyautogui.typewrite(text)
     pyautogui.press("enter")
     time.sleep(1)
-while True:
-    k = cv2.waitKey(1) & 0xFF
-    if k == ord('q'):
-        break
-        
-
-    
+   
 def exit():
     driver.quit()
 
