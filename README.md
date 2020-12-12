@@ -1,5 +1,5 @@
 # SpamX
-SpamX is Instagram spammer that spams message at bot speed to your friend
+SpamX is Instagram spammer that spams message to your friends (Anyone on Instagram )
 
 
 How to use spamX
