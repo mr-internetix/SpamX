@@ -3,7 +3,7 @@ SpamX is Instagram spammer that spams message to your friends (Anyone on Instagr
 
 
 How to use spamX
- 
+--- Clone the repository or download the code as a zip ---
 1. Install requirements by command --> pip install -r requirements.txt. 
 2. Run the script and enter credentials and victim insta id .
 3. Enter text you want to spam .
