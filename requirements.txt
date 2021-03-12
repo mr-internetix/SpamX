@@ -1,4 +1,4 @@
-selenium
-webdriver_manager
-pyautogui
+selenium == 3.141.0
+webdriver-manager == 3.3.0
+pyautogui == 0.9.52
 time
