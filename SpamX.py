@@ -83,7 +83,7 @@ def main():
     count  = int(input('Enter the amount of messages to be send : '))
 
     # Validating the user entered information
-    if len(username) < 4 or username.isalnum == False:
+    if len(username) < 4 or username.isalnum() == False:
         # If the user entered username is either less than 4 characters or is not alphanumeric, then we display the error message on the console screen
 
         input(f'[ Error : Please enter a valid instagram username ]\nPress enter key to continue...')
@@ -97,7 +97,7 @@ def main():
         else:
             # If the user entered password is valid, then we continue
 
-            if len(victimUsername) < 4 or username.isalnum == False:
+            if len(victimUsername) < 4 or victimUsername.isalnum() == False:
                 # If the user entered username of the victim is either less than 4 characters or is not alphanumeric, then we display the error message on the console screen
 
                 input(f'[ Error : Please enter a valid instagram username of the victim ]\nPress enter key to continue...')
