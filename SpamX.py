@@ -12,13 +12,10 @@ Author : Ajit Yadav (https://github.com/Mr-Internetix/)
 Created on : Decemeber 4, 2020
 
 Last modified by : Rishav Das (https://github.com/rdofficial/)
-Last modified on : May 11, 2021
+Last modified on : May 12, 2021
 
 Changes made in the last modification :
-1. Changed the entire code structure. Changed the names of the variables, changed the structure of the code. Added main function to the script.
-2. Removed some lines of codes and error as well. Also added try..except blocks for reducing the chances of the tool getting crashed. Added some if..else statements after the codes for asking the user input, in order to reduce any changes of error and displaying the user some error messages.
-3. Added the feature to hide the user's input on the console when entering the password
-4. Added commented docs and some in-code comments to make sure the source file looks professional and easily readable to other coders / programmers.
+1. Updating the minor error in the process of the validation of the username entered by the user. The usernames of an instagram account usually contains special characters like '_' and '.', but the if..else conditional statements that were for validating the user entered instagram usernames. Thus we removed the checking of the alphanumeric condition for the user enterted usernames. Thus, resolved the issue.
 
 Authors contributed to this script (Add your name below if you have contributed) :
 1. Ajit Yadav (github:https://github.com/Mr-Internetix/)
@@ -83,12 +80,12 @@ def main():
     count  = int(input('Enter the amount of messages to be send : '))
 
     # Validating the user entered information
-    if len(username) < 4 or username.isalnum() == False:
-        # If the user entered username is either less than 4 characters or is not alphanumeric, then we display the error message on the console screen
+    if len(username) < 4:
+        # If the user entered username is less than 4 characters, then we display the error message on the console screen
 
         input(f'[ Error : Please enter a valid instagram username ]\nPress enter key to continue...')
     else:
-        # If the user entered username is neither less than 4 characters nor non-alphanumeric, then we continue
+        # If the user entered username is valid, then we continue
 
         if len(password) < 5:
             # If the user entered password is less than 5 characters, then we display the error message on the console screen
@@ -97,8 +94,8 @@ def main():
         else:
             # If the user entered password is valid, then we continue
 
-            if len(victimUsername) < 4 or victimUsername.isalnum() == False:
-                # If the user entered username of the victim is either less than 4 characters or is not alphanumeric, then we display the error message on the console screen
+            if len(victimUsername) < 4:
+                # If the user entered username of the victim is less than 4 characters, then we display the error message on the console screen
 
                 input(f'[ Error : Please enter a valid instagram username of the victim ]\nPress enter key to continue...')
             else:
