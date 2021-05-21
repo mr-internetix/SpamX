@@ -36,7 +36,7 @@ except Exception as e:
     input(f'[ Error : {e} ]\nPress enter key to continue...')
     exit()
 
-def InstagramLogin(username, password, victimUsername):
+def InstagramLogin(username, password, victimUsername ):
     """ The function to login to the instagram website using the user provided credentials. The function requires two arguments : username, password, victimUsername. The function also loads the message conversation of the target user. Each of the tasks here are executed using the selenium and chrome driver, thus there are dependencies required for this function to execute properly. Also, for each of the tasks (wheter entering data, or switching pages), the web browser takes certain amount of time to load the pages properly, that is why we are using sleep function in the time module in order to wait properly before proceeding to the next task. """
 
     # Opening instagram website on the web browser
@@ -50,18 +50,18 @@ def InstagramLogin(username, password, victimUsername):
 
     # Pressing the login button on the web page and then saving the password into the browser / cache
     driver.find_element_by_css_selector('button.sqdOP.L3NKy.y3zKF').click()
-    time.sleep(5)
+    sleep(5)
     driver.find_element_by_css_selector('button.sqdOP.L3NKy.y3zKF').click()
-    time.sleep(5)
+    sleep(5)
     driver.find_element_by_css_selector('button.aOOlW.HoLwm').click()
-    time.sleep(5)
+    sleep(5)
 
     # Finding the requested user using the search bar and entering the specified victimUsername
     driver.find_element_by_xpath('//input[@type="text"]').send_keys(victimUsername)
-    time.sleep(1)
+    sleep(1)
     pyautogui.press('enter')
     pyautogui.press('enter')
-    time.sleep(3)
+    sleep(3)
     driver.find_element_by_css_selector('button.sqdOP.L3NKy._4pI4F._8A5w5').click()
 
 def main():
@@ -75,7 +75,6 @@ def main():
     username = input('Enter your instagram username : ')
     password = getpass('Enter your instagram password : ')
     victimUsername = input('Enter the username of the victim : ')
-    print()
     text = input('Enter the message to be send : ')
     count  = int(input('Enter the amount of messages to be send : '))
 
@@ -101,7 +100,7 @@ def main():
             else:
                 # If the user entered username of the victim is valid, then we continue
 
-                if len(count) <= 0:
+                if count <= 0:
                     # If the user entered amount of messages is less or equal to 0, then we display the error message on the console screen
 
                     input(f'[ Error : Please enter the amount of atleast 1 message to be sent ]\nPress enter key to continue...')
@@ -113,13 +112,14 @@ def main():
                     driver.maximize_window()
 
                     # Calling the function to login into the user's instagram account with the provided credentials
-                    InstagramLogin(username, password)
+                    InstagramLogin(username, password , victimUsername)
 
                     # Sending the message in a loop for the user specified amount of times
                     for i in range(count):
                         pyautogui.typewrite(text)
                         pyautogui.press("enter")
-                        time.sleep(1)
+                        sleep(1)
+                    driver.quit()
 
 if __name__ == '__main__':
     try:
