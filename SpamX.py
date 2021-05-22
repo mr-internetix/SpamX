@@ -62,7 +62,7 @@ def InstagramLogin(username, password, victimUsername ):
     pyautogui.press('enter')
     pyautogui.press('enter')
     sleep(3)
-    driver.find_element_by_css_selector('button.sqdOP.L3NKy._4pI4F._8A5w5').click()
+    driver.find_element_by_css_selector('button.sqdOP.L3NKy._8A5w5').click()
 
 def main():
     # Giving global access to some variables defined inside this function
