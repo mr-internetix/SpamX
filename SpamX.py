@@ -41,7 +41,7 @@ def InstagramLogin(username, password, victimUsername ):
 
     # Opening instagram website on the web browser
     driver.get('https://www.instagram.com/')
-    sleep(1)
+    sleep(2)
 
     # Entering the specified username and password into the input boxes of the login page
     driver.find_element_by_name('username').send_keys(username)
@@ -58,7 +58,7 @@ def InstagramLogin(username, password, victimUsername ):
 
     # Finding the requested user using the search bar and entering the specified victimUsername
     driver.find_element_by_xpath('//input[@type="text"]').send_keys(victimUsername)
-    sleep(1)
+    sleep(2)
     pyautogui.press('enter')
     pyautogui.press('enter')
     sleep(3)
